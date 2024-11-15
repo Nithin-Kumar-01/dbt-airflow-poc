@@ -1,4 +1,4 @@
 cleanWS()
-astronomer_install()
-clone_repo()
 astro_build()
+clone_repo()
+astro_start()
