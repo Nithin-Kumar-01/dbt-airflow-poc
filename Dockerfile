@@ -1,4 +1,4 @@
-FROM quay.io/astronomer/astro-runtime:8.8.0
+FROM quay.io/astronomer/astro-runtime:12.3.0
 
 
 # install dbt into a virtual environment
