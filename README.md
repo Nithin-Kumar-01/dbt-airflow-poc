@@ -1,7 +1,36 @@
-Overview
-========
+Use DBT profile instead of Airflow connections
+==============================================
 
-In this virtual hands-on lab, you will follow a step-by-step guide to using Airflow with dbt to create data transformation job schedulers. This repo follows this guide: https://quickstarts.snowflake.com/guide/data_engineering_with_apache_airflow/index.html?index=..%2F..index#0
+
+If you don’t want to use Airflow connections, or if there’s no readily-available profile mapping for your database, you can use your own dbt profiles.yml file. To do so, you’ll need to pass the path to your profiles.yml file to the profiles_yml_filepath argument in ProfileConfig.
+
+For example, the code snippet below points Cosmos at a profiles.yml file and instructs Cosmos to use the my_snowflake_profile profile and dev target:
+
+from cosmos.config import ProfileConfig
+
+profile_config = ProfileConfig(
+    profile_name="my_snowflake_profile",
+    target_name="dev",
+    profiles_yml_filepath="/path/to/profiles.yml",
+)
+
+
+
+
+Usefull URLS
+============
+
+https://astronomer.github.io/astronomer-cosmos/profiles/index.html
+
+https://www.phdata.io/blog/how-to-utilize-astronomer-cosmos-to-streamline-dbt-workflows/#elementor-toc__heading-anchor
+
+https://medium.com/hipay-tech/using-airflow-in-production-a-ci-cd-approach-e0b23a9aefc3
+
+https://docs.getdbt.com/reference/artifacts/manifest-json
+
+https://github.com/astronomer/cosmos-use-case
+
+https://blog.det.life/making-data-pipeline-production-ready-taking-dbt-model-to-production-with-astronomer-5183d7a383c1
 
 Deploy Your Project Locally
 ===========================
